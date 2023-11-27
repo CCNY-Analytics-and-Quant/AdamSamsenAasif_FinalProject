@@ -1,0 +1,17 @@
+import pandas as pd
+import datetime as dt
+import numpy as np
+import yfinance as yf
+import matplotlib.pyplot as plt
+import seaborn as sns
+from pandas_datareader import data as wb
+import scipy.optimize as sco
+
+# Step 1 and 2
+
+ticker =['IVV']
+data_source = yf
+ivv_data = yf.download(ticker, period = '10y')
+ivv_data = ivv_data.dropna (how='all', axis = 1)
+
+display (ivv_data)
